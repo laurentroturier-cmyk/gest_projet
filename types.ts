@@ -16,7 +16,7 @@ export interface PurchaseProcedure {
   Acheteur: string;
   "Type de procédure": string;
   "Code CPV Principal": string;
-  "Montant prévisionnel du marché (€ HT)": string;
+  // "Montant prévisionnel du marché (€ HT)" supprimé
   "Sur 12 mois économie achat prévisionnelle (€)": string;
   "Forme du marché": string;
   "Objet court": string;
@@ -61,7 +61,7 @@ export interface Project {
   Acheteur: string;
   "Famille Achat Principale": string;
   "Titre du dossier": string;
-  "Montant prévisionnel du marché (€ TTC)": string;
+  // "Montant prévisionnel du marché (€ TTC)" supprimé
   Prescripteur: string;
   "Client Interne": string;
   "Statut du Dossier": string;
