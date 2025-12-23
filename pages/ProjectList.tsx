@@ -97,8 +97,8 @@ export const ProjectList: React.FC<Props> = ({ projects = [], onSelectProject, o
     <div className="space-y-6 animate-in fade-in duration-500">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
         <StatCard title="Projets affichés" value={filteredProjects.length} icon={<Briefcase size={20} />} color="#3b82f6" />
-        <StatCard title="Total Projets (€ TTC)" value={formatCurrency(globalTotalAmount)} icon={<Wallet size={20} />} color="#10b981" />
-        <StatCard title="Total Procédures (€ HT)" value={formatCurrency(globalProceduresAmount)} icon={<BarChart3 size={20} />} color="#00553d" />
+        <StatCard title="Total Projets (€)" value={formatCurrency(globalTotalAmount)} icon={<Wallet size={20} />} color="#10b981" />
+        <StatCard title="Total Procédures (€)" value={formatCurrency(globalProceduresAmount)} icon={<BarChart3 size={20} />} color="#00553d" />
         <StatCard title="Priorité P1" value={filteredProjects.filter(p => String(p["Priorité"] || "").includes("P1")).length} icon={<AlertCircle size={20} />} color="#ef4444" />
         <StatCard title="Terminés (Total)" value={projects.filter(p => String(p["Statut du Dossier"] || "").toLowerCase().includes("terminé")).length} icon={<CheckCircle2 size={20} />} color="#8bc53f" />
       </div>
@@ -187,8 +187,8 @@ export const ProjectList: React.FC<Props> = ({ projects = [], onSelectProject, o
                 <th className="py-4 px-4">Titre du dossier</th>
                 <th className="py-4 px-4">Acheteur</th>
                 <th className="py-4 px-4">Statut</th>
-                <th className="py-4 px-4 text-right">Procédures (€ HT)</th>
-                <th className="py-4 px-4 text-right">Global (€ TTC)</th>
+                <th className="py-4 px-4 text-right">Procédures (€)</th>
+                <th className="py-4 px-4 text-right">Global (€)</th>
                 <th className="py-4 px-4 text-center">Actions</th>
               </tr>
             </thead>

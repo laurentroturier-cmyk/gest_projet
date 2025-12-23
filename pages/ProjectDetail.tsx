@@ -499,13 +499,13 @@ export const ProjectDetail: React.FC<Props> = ({ project, allProjects, onBack, o
                 <SelectField label="Acheteur" value={formData["Acheteur"]} onChange={(v) => setFormData(p => ({...p, "Acheteur": v}))} options={refBuyers} isLoading={isBuyersLoading} />
                 <AsyncSearchableSelect label="Famille Achat" value={formData["Famille Achat Principale"]} onChange={(v: string) => setFormData(p => ({...p, "Famille Achat Principale": v}))} onSearch={searchFamilies} />
                 <InputField 
-                  label="Montant prévisionnel global (€ TTC)" 
+                  label="Montant prévisionnel global (€)" 
                   value={formData["Montant prévisionnel du marché (€ TTC)"]} 
                   onChange={(v) => setFormData(p => ({...p, "Montant prévisionnel du marché (€ TTC)": v}))} 
                   customColorClass={statusColorClass}
                   badge={
                     <span className={`flex items-center px-2 py-0.5 rounded text-[10px] font-bold border transition-colors ${isBudgetIssue ? 'bg-red-50 dark:bg-red-900/20 border-red-100 dark:border-red-800' : 'bg-green-50 dark:bg-green-900/20 border-green-100 dark:border-green-800'}`}>
-                      <Calculator size={10} className="mr-1" /> Procédures €TTC: {formatCurrency(procedureSum)}
+                      <Calculator size={10} className="mr-1" /> Procédures €: {formatCurrency(procedureSum)}
                     </span>
                   }
                 />
@@ -652,7 +652,7 @@ export const ProjectDetail: React.FC<Props> = ({ project, allProjects, onBack, o
                       </div>
 
                       <div className="flex items-center justify-between mt-auto pt-4 border-t border-gray-100 dark:border-gray-700">
-                        <div className="text-xs font-black text-primary dark:text-secondary">{formatCurrency(proc["Montant prévisionnel du marché (€ HT)"])} <span className="text-[10px] font-normal text-gray-400">HT</span></div>
+                        <div className="text-xs font-black text-primary dark:text-secondary">{formatCurrency(proc["Montant prévisionnel du marché (€ HT)"])}</div>
                         <button className={`flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider transition-colors ${isActive ? 'text-primary' : 'text-gray-400 group-hover:text-primary'}`}>
                           Modifier <ChevronRight size={14} />
                         </button>
@@ -700,7 +700,7 @@ export const ProjectDetail: React.FC<Props> = ({ project, allProjects, onBack, o
                           <AsyncSearchableSelect label="Code CPV" value={activeProcedure["Code CPV Principal"]} onChange={(v: string) => handleUpdateProcedure(activeProcedure.id, "Code CPV Principal", v)} onSearch={searchCPVCodes} />
                           <InputField label="Objet court" value={activeProcedure["Objet court"]} onChange={(v: string) => handleUpdateProcedure(activeProcedure.id, "Objet court", v)} fullWidth />
                           
-                          <InputField label="Montant (€ HT)" value={activeProcedure["Montant prévisionnel du marché (€ HT)"]} onChange={(v: string) => handleUpdateProcedure(activeProcedure.id, "Montant prévisionnel du marché (€ HT)", v)} />
+                          <InputField label="Montant (€)" value={activeProcedure["Montant prévisionnel du marché (€ HT)"]} onChange={(v: string) => handleUpdateProcedure(activeProcedure.id, "Montant prévisionnel du marché (€ HT)", v)} />
                           <InputField label="Économie (€)" value={activeProcedure["Sur 12 mois économie achat prévisionnelle (€)"]} onChange={(v: string) => handleUpdateProcedure(activeProcedure.id, "Sur 12 mois économie achat prévisionnelle (€)", v)} />
                        </div>
 
