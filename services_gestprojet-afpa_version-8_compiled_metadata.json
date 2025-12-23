@@ -1,0 +1,5 @@
+{
+  "name": "GestProjet Afpa",
+  "description": "Application de gestion de portefeuille de projets achats et travaux avec import Excel.",
+  "requestFramePermissions": []
+}

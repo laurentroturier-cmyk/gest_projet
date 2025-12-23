@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://upload.wikimedia.org/wikipedia/commons/4/4d/Logo_AFPA.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GestProjet - Gestion de Portefeuille</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#00553d', // AFPA Green tone
+              primaryLight: '#007a58', // Lighter for dark mode
+              secondary: '#8bc53f', // AFPA Light Green tone
+              accent: '#f3f4f6',
+              darkBg: '#111827',
+              darkCard: '#1f2937',
+            }
+          }
+        }
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "xlsx": "https://esm.sh/xlsx@^0.18.5",
+    "recharts": "https://esm.sh/recharts@^3.5.1",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "idb": "https://esm.sh/idb@^8.0.0",
+    "@azure/msal-browser": "https://esm.sh/@azure/msal-browser@^4.27.0",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.39.3"
+  }
+}
+</script>
+<style>
+  /* Custom Scrollbar for Dark Mode */
+  .dark ::-webkit-scrollbar {
+    width: 10px;
+  }
+  .dark ::-webkit-scrollbar-track {
+    background: #1f2937; 
+  }
+  .dark ::-webkit-scrollbar-thumb {
+    background: #374151; 
+    border-radius: 5px;
+  }
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: #4b5563; 
+  }
+
+  /* --- MODE TAMISÉ (DIM MODE) OVERRIDES --- */
+  /* Utilise la palette Slate (Bleu-Gris) intermédiaire */
+  /* C'est un entre-deux : moins dur que le noir, moins éblouissant que le blanc */
+  
+  /* Fond principal : Slate 800 (au lieu de 900) */
+  html.dim body {
+    background-color: #1e293b !important; 
+  }
+
+  /* Background Principal overrides */
+  html.dim .dark\:bg-gray-900 {
+    background-color: #1e293b !important;
+  }
+
+  /* Cards/Header overrides : Slate 700 (au lieu de 800) */
+  html.dim .dark\:bg-gray-800 {
+    background-color: #334155 !important;
+  }
+
+  /* Hover/Secondary overrides : Slate 600 */
+  html.dim .dark\:bg-gray-700, 
+  html.dim .dark\:hover\:bg-gray-700:hover {
+    background-color: #475569 !important;
+  }
+
+  /* Borders overrides : Slate 500 pour que ce soit visible sur le fond Slate 700 */
+  html.dim .dark\:border-gray-700 {
+    border-color: #475569 !important;
+  }
+  html.dim .dark\:border-gray-600 {
+    border-color: #64748b !important;
+  }
+  
+  /* Inputs background & Textareas */
+  html.dim input.dark\:bg-gray-800,
+  html.dim select.dark\:bg-gray-800,
+  html.dim textarea.dark\:bg-gray-800 {
+    background-color: #334155 !important; /* Match card bg or slightly darker */
+    border-color: #64748b !important;
+  }
+
+  /* Tables zebra striping overrides */
+  html.dim .dark\:hover\:bg-gray-700\/50:hover {
+    background-color: rgba(71, 85, 105, 0.5) !important;
+  }
+
+  /* Scrollbar override for Dim mode */
+  html.dim ::-webkit-scrollbar-track { background: #1e293b; }
+  html.dim ::-webkit-scrollbar-thumb { background: #475569; }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-colors duration-200">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
