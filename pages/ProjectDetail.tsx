@@ -719,8 +719,8 @@ export const ProjectDetail: React.FC<Props> = ({ project, allProjects, onBack, o
                        <div className="bg-white/50 dark:bg-gray-800/30 p-6 rounded-2xl border dark:border-gray-700">
                           <h5 className="text-sm font-bold text-primary dark:text-secondary mb-4 flex items-center gap-2"><ShieldCheck size={16} /> Informations DAE</h5>
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                             <InputField label="Sociales" value={activeProcedure["Dispo sociales"]} onChange={(v) => handleUpdateProcedure(activeProcedure.id, "Dispo sociales", v)} />
-                             <InputField label="Environnement" value={activeProcedure["Dispo environnementales"]} onChange={(v) => handleUpdateProcedure(activeProcedure.id, "Dispo environnementales", v)} />
+                             <SelectField label="Sociales" value={activeProcedure["Dispo sociales"]} onChange={(v) => handleUpdateProcedure(activeProcedure.id, "Dispo sociales", v)} options={yesNoOptions} />
+                             <SelectField label="Environnement" value={activeProcedure["Dispo environnementales"]} onChange={(v) => handleUpdateProcedure(activeProcedure.id, "Dispo environnementales", v)} options={yesNoOptions} />
                              <SelectField label="Innovation" value={activeProcedure["Projet ouvert à l'acquisition de solutions innovantes"]} onChange={(v) => handleUpdateProcedure(activeProcedure.id, "Projet ouvert à l'acquisition de solutions innovantes", v)} options={yesNoOptions} />
                              <SelectField label="Accès TPE/PME" value={activeProcedure["Projet facilitant l'accès aux TPE/PME"]} onChange={(v) => handleUpdateProcedure(activeProcedure.id, "Projet facilitant l'accès aux TPE/PME", v)} options={yesNoOptions} />
                           </div>
