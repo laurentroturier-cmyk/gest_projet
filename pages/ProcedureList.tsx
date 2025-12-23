@@ -117,7 +117,7 @@ export const ProcedureList: React.FC<Props> = ({ projects, onSaveProject, onNavi
             color="#3b82f6" 
           />
           <StatCard 
-            title="Montant total cumulé (€ HT)" 
+            title="Montant total cumulé (€)" 
             value={formatCurrency(stats.total)} 
             icon={<Euro size={24} />} 
             color="#00553d" 
@@ -207,7 +207,7 @@ export const ProcedureList: React.FC<Props> = ({ projects, onSaveProject, onNavi
                            <th className="py-3 px-4 text-[10px] font-bold uppercase tracking-wider">Procédure</th>
                            <th className="py-3 px-4 text-[10px] font-bold uppercase tracking-wider">Objet</th>
                            <th className="py-3 px-4 text-[10px] font-bold uppercase tracking-wider">Projet Parent</th>
-                           <th className="py-3 px-4 text-right text-[10px] font-bold uppercase tracking-wider">Montant (€ HT)</th>
+                           <th className="py-3 px-4 text-right text-[10px] font-bold uppercase tracking-wider">Montant (€)</th>
                            <th className="py-3 px-4 text-center text-[10px] font-bold uppercase tracking-wider">Actions</th>
                        </tr>
                    </thead>
